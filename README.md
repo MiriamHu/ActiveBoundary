@@ -1,11 +1,11 @@
 ## ActiveBoundary
-Miriam W. Huijser and Jan C. van Gemert
+Miriam W. Huijser and Jan C. van Gemert  
 International Conference on Computer Vision (ICCV), 2017 (**spotlight presentation**)  
 
 Paper: https://jvgemert.github.io/pub/huijserICCV17ActiveBoundAnnoGAN.pdf  
 arXiv preprint: https://arxiv.org/abs/1703.06971
  
-If you find my code useful for your research, please cite
+If you find my code useful for your research, please cite:
 ```
 @article{huijser2017active,
   title={Active Decision Boundary Annotation with Deep Generative Models},
@@ -22,9 +22,8 @@ If you find my code useful for your research, please cite
 
 ### Running the code  
 The code is compatible only with both Python2.7 (`python`).  
+Code is coming soon!
 
 --------------------------------------
 
-Please contact me (huijsermiriam@gmail.com) if you have any questions!
-
-
+Please do not hesitate to contact me (huijsermiriam@gmail.com) if you have any questions.
