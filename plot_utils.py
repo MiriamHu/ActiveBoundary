@@ -5,6 +5,9 @@ __author__ = 'mhuijser'
 
 centered_in_old = True
 
+"""
+Some helper functions for visualizing the algorithm's workings in a 2D latent space. Useful for toy example.
+"""
 
 def plot_base(dataset, labeler, model, iteration, show=True):
     fig = plt.figure()

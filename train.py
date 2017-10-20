@@ -176,8 +176,6 @@ class ActiveBoundary(object):
         for i in xrange(opt.iterations):  # loop through the number of queries
             try:
                 print "\nIteration", i + 1
-                if opt.plot:
-                    plot_base(self.dataset, self.labeler, self.model, i + 1)
                 start_time = time.time()
                 for b in range(opt.al_batch_size):
                     try:
@@ -187,9 +185,6 @@ class ActiveBoundary(object):
                         print(e)
                         no_more_samples = True
                         break
-                    if opt.plot:
-                        plot_after_query(line_segment, self.dataset.data["features"][query_id], self.dataset,
-                                         self.labeler, self.model, i + 1)
                     if opt.query_strategy == "clustercentroids":
                         lbl, db_point = self.labeler.label(query_image, line, line_segment, sample_already_scaled=True,
                                                            intersection_point_cdb=intersection_point_cdb)
@@ -204,9 +199,6 @@ class ActiveBoundary(object):
                                             sample=query_image)  # update the dataset with newly-labeled example
                     except Exception as e:
                         print "EXCEPTION", traceback.format_exc()
-                    if opt.plot:
-                        plot_after_label(line_segment, self.dataset.data["features"][query_id], self.dataset,
-                                         self.labeler, self.model, i + 1)
                 self.model.train(self.dataset)  # train model with newly-updated Dataset
 
                 # Test here on embedded test data and append to test_scores_per_iteration
@@ -242,8 +234,6 @@ class ActiveBoundary(object):
                     len(test_scores_per_iteration), time.time() - begin_system_time)
                 return test_scores_per_iteration
         print "Iterating %d times took %.2f seconds" % (len(test_scores_per_iteration), time.time() - begin_system_time)
-        if opt.plot:
-            plot_base(self.dataset, self.labeler, self.model, opt.iterations)
         return test_scores_per_iteration
 
     @staticmethod
