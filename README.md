@@ -1,4 +1,4 @@
-## ActiveBoundary
+## Active Decision Boundary Annotation with Deep Generative Models
 Miriam W. Huijser and Jan C. van Gemert  
 International Conference on Computer Vision 2017 (ICCV): spotlight presentation.
 
@@ -53,3 +53,5 @@ The first time train.py is run for a certain dataset, the required data (and mod
 --------------------------------------
 
 Please do not hesitate to contact me (huijsermiriam@gmail.com) if you have any questions.
+https://www.aiir.nl/
+
