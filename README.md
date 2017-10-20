@@ -52,6 +52,6 @@ The first time train.py is run for a certain dataset, the required data (and mod
 
 --------------------------------------
 
-Please do not hesitate to contact me (huijsermiriam@gmail.com) if you have any questions.
+Please do not hesitate to contact me (huijsermiriam@gmail.com) if you have any questions.  
 https://www.aiir.nl/
 
