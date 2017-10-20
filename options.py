@@ -1,6 +1,7 @@
 import argparse
 from keras.utils.data_utils import get_file
 import os
+import datetime
 
 __author__ = 'mhuijser'
 
@@ -23,7 +24,7 @@ def set():
     parser.add_argument("--oracle_type", help="The type of oracle.", default="line_labeler",
                         choices=["line_labeler", "noisy_line_labeler", "human_line_labeler"])
     parser.add_argument("--plot", action="store_true", help="Plot progress.")
-    parser.add_argument("--save_path", default="results", help="Save path for all algorithm output.")
+    parser.add_argument("--save_path", default="results_" + datetime.datetime.now().strftime("%Y-%m-%d_%H%M") , help="Save path for all algorithm output.")
 
     opt = parser.parse_args()
 

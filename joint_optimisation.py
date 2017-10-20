@@ -72,11 +72,11 @@ class WeightsEarlyStopping(Callback):
 def create_joint_model(input_dim, init_w, init_b, gamma, weight_hinge, learning_rate, decay, regulariser=None):
     image_input = Input(shape=(input_dim,), dtype='float32', name='image_input')
     db_input = Input(shape=(input_dim,), dtype='float32', name="db_input")
-    shared_layer = Dense(1, input_dim=input_dim, W_regularizer=regulariser,
-                         init='uniform', activation="linear", bias=True, name='shared_layer')
+    shared_layer = Dense(1, input_dim=input_dim, kernel_regularizer=regulariser, kernel_initializer='uniform',
+                         activation="linear", use_bias=True, name='shared_layer')
     _ = shared_layer(image_input)
     _ = shared_layer(db_input)
-    model = Model(input=[image_input, db_input], output=[shared_layer.get_output_at(0), shared_layer.get_output_at(1)])
+    model = Model(inputs=[image_input, db_input], outputs=[shared_layer.get_output_at(0), shared_layer.get_output_at(1)])
     adam = Adam(lr=learning_rate)  # SGD should also work because convex loss function, but Adam converges faster.
     model.compile(optimizer=adam, loss=['hinge', 'mse'], loss_weights=[weight_hinge, gamma],
                   metrics=[my_accuracy, 'mse'])
@@ -85,7 +85,7 @@ def create_joint_model(input_dim, init_w, init_b, gamma, weight_hinge, learning_
 def create_single_model(input_dim, init_w, init_b, learning_rate, decay, regulariser=None):
     svm_model = Sequential()
     svm_model.add(
-        Dense(1, input_dim=input_dim, W_regularizer=regulariser, init='uniform', activation="linear", bias=True))
+        Dense(1, input_dim=input_dim, kernel_regularizer=regulariser, kernel_initializer='uniform', activation="linear", use_bias=True))
     if init_w is not None and init_b is not None:
         svm_model.set_weights([init_w, np.array([init_b])])
     adam = Adam(lr=learning_rate)  # SGD also option.
