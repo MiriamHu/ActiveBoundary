@@ -5,7 +5,7 @@ International Conference on Computer Vision 2017 (ICCV): spotlight presentation.
 Paper: https://jvgemert.github.io/pub/huijserICCV17ActiveBoundAnnoGAN.pdf  
 arXiv preprint: https://arxiv.org/abs/1703.06971
 
-<img src="https://user-images.githubusercontent.com/9445724/31823446-849b2b78-b5ac-11e7-9329-a7c56a6333ff.png" width="500" height="500" align="middle" />
+<p align="center"><img src="https://user-images.githubusercontent.com/9445724/31823446-849b2b78-b5ac-11e7-9329-a7c56a6333ff.png" width="500" height="500"/></p>
 
 We provide the code for the decision boundary annotation active learning algorithm.
 If you find my code useful for your research, please cite:
@@ -47,6 +47,8 @@ If `--enable-gpu`, the query lines (and points) are generated and saved as *.pdf
 For `--oracle_type` `human_line_labeler`, we require `--enable-gpu`. The user is shown an interface in which the decision boundary can be annotated.  
 
 For more (hyper)parameters please refer to `options.py`.
+
+The first time train.py is run for a certain dataset, the required data (and model if gpu is enabled) is downloaded automatically.
 
 --------------------------------------
 
