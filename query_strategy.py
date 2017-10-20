@@ -393,7 +393,7 @@ class UncertaintySamplingLine(LineQueryStrategy):
             else:
                 x = self.generative_model.decode(to_vector(self.dataset.data["features"][
                                                                query_id]).T)  # comes from dataset.data["features"], so is already in original space in which ALI operates.
-            save_path = os.path.join(self.save_path_queries, "pointquery_%d_%d.pdf" % (self.n_queries + 1, query_id))
+            save_path = os.path.join(self.save_path_queries, "pointquery_%d_%d.png" % (self.n_queries + 1, query_id))
             if x.shape[1] == 1:
                 plt.imsave(save_path, x[0, 0, :, :], cmap=cm.Greys)
             else:
