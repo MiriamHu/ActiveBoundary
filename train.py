@@ -1,7 +1,5 @@
 import options
 import h5py
-import matplotlib
-matplotlib.use('Agg')
 import time
 from fuel.datasets import H5PYDataset
 from dataset import Dataset
@@ -9,7 +7,6 @@ from query_strategy import UncertaintySamplingLine, UncertaintyDenseSamplingLine
     RandomSamplingLine
 from model import JointOptimisationSVM
 from labeler import LineLabeler, NoisyLineLabeler, HumanLineLabeler
-from plot_utils import *
 from generative_model import GenerativeALIModel
 import os
 import traceback
