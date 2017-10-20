@@ -69,7 +69,6 @@ def set():
                  os.path.join("https://activeboundary.blob.core.windows.net/", opt.main_loop_path))
         get_file(os.path.join(cwd, opt.hdf5_dataset),
                  os.path.join("https://activeboundary.blob.core.windows.net/", opt.hdf5_dataset))
-    else:
-        get_file(os.path.join(cwd, opt.hdf5_dataset_encoded),
-                 os.path.join("https://activeboundary.blob.core.windows.net/", opt.hdf5_dataset_encoded))
+    get_file(os.path.join(cwd, opt.hdf5_dataset_encoded),
+             os.path.join("https://activeboundary.blob.core.windows.net/", opt.hdf5_dataset_encoded))
     return opt
