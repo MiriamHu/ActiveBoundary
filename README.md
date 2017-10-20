@@ -5,6 +5,8 @@ International Conference on Computer Vision 2017 (ICCV): spotlight presentation.
 Paper: https://jvgemert.github.io/pub/huijserICCV17ActiveBoundAnnoGAN.pdf  
 arXiv preprint: https://arxiv.org/abs/1703.06971
 
+<img src="https://user-images.githubusercontent.com/9445724/31823446-849b2b78-b5ac-11e7-9329-a7c56a6333ff.png" width="500" height="500" align="middle" />
+
 We provide the code for the decision boundary annotation active learning algorithm.
 If you find my code useful for your research, please cite:
 ```
@@ -19,7 +21,7 @@ If you find my code useful for your research, please cite:
 --------------------------------------
 
 ### Installation 
-Clone this repository recursively (this because of the adapted ALI submodule):  
+Clone this repository recursively because of the adapted ALI submodule:  
 `git clone --recursive https://github.com/MiriamHu/ActiveBoundary.git`  
 
 Then install requirements:
@@ -29,7 +31,7 @@ pip install -r requirements.txt
 ```
 
 ### Running the code  
-The code is compatible only with both Python2.7 (`python`).  
+The code is compatible only with Python2.7 (`python`).  
 The training code can be run with the following command:  
 ```
 python train.py <query_strategy> [--iterations ITERATIONS] [--enable_gpu] [--oracle_type {line_labeler,noisy_line_labeler,human_line_labeler}] [--dataset {shoebag,mnist08,svhn08}] [--save_path SAVE_PATH] --percentage_labeled PERCENTAGE_LABELED] [--al_batch_size AL_BATCH_SIZE] 
