@@ -336,7 +336,8 @@ class UncertaintySamplingLine(LineQueryStrategy):
             line, line_segment, intersection_point = self.make_line(X_pool[ask_id], n_images)
             print "Made line from found query in %.2f seconds" % (time.time() - start_time)
             if not self.human_experiment and self.generative_model is not None:
-                if self.n_queries % 500 == 0:
+                # Change 1 to higher number for faster algorithm (less generating and plotting)
+                if self.n_queries % 1 == 0:
                     start_time = time.time()
                     self.generate_images_line_save(line_segment, unlabeled_entry_ids[ask_id])
                     print "Plotted query line in %.2f seconds" % (time.time() - start_time)
@@ -523,7 +524,8 @@ class RandomSamplingLine(UncertaintySamplingLine):
             line, line_segment, intersection_point = self.make_line(X_pool[ask_id], n_images)
             print "Made line from found query in %.2f seconds" % (time.time() - start_time)
             if not self.human_experiment and self.generative_model is not None:
-                if self.n_queries % 500 == 0:
+                # Change 1 to higher number for faster algorithm (less generating and plotting)
+                if self.n_queries % 1 == 0:
                     start_time = time.time()
                     self.generate_images_line_save(line_segment, unlabeled_entry_ids[ask_id])
                     print "Plotted query line in %.2f seconds" % (time.time() - start_time)
@@ -576,7 +578,8 @@ class UncertaintyDenseSamplingLine(UncertaintySamplingLine):
             line, line_segment, intersection_point = self.make_line(X_pool[ask_id], n_images)
             print "Made line from found query in %.2f seconds" % (time.time() - start_time)
             if not self.human_experiment and self.generative_model is not None:
-                if self.n_queries % 500 == 0:
+                # Change 1 to higher number for faster algorithm (less generating and plotting)
+                if self.n_queries % 1 == 0:
                     start_time = time.time()
                     self.generate_images_line_save(line_segment, unlabeled_entry_ids[ask_id])
                     print "Plotted query line in %.2f seconds" % (time.time() - start_time)
@@ -637,7 +640,8 @@ class ClusterCentroidsLine(UncertaintySamplingLine):
             line, line_segment, intersection_point = self.make_line(query_image, n_images)  # scaled space
             print "Made line from found query in %.2f seconds" % (time.time() - start_time)
             if not self.human_experiment and self.generative_model is not None:
-                if self.n_queries % 500 == 0:
+                # Change 1 to higher number for faster algorithm (less generating and plotting)
+                if self.n_queries % 1 == 0:
                     start_time = time.time()
                     self.generate_images_line_save(line_segment, None, image_original_space=query_image_original_space)
                     print "Plotted query line in %.2f seconds" % (time.time() - start_time)
