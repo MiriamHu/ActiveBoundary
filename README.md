@@ -1,6 +1,6 @@
 ## ActiveBoundary
 Miriam W. Huijser and Jan C. van Gemert  
-International Conference on Computer Vision (ICCV), 2017 (**spotlight presentation**)  
+International Conference on Computer Vision 2017 (ICCV): spotlight presentation.
 
 Paper: https://jvgemert.github.io/pub/huijserICCV17ActiveBoundAnnoGAN.pdf  
 arXiv preprint: https://arxiv.org/abs/1703.06971
