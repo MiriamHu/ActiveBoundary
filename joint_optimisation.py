@@ -26,7 +26,7 @@ class WeightSharing(Callback):
 
     def on_epoch_end(self, epoch, logs={}):
         self.bp.set_weights(self.model.get_weights())
-        history = self.bp.fit(self.Xii, self.yii, batch_size=min(2, min(self.Xii.shape[0], 32)), nb_epoch=2, verbose=0)
+        history = self.bp.fit(self.Xii, self.yii, batch_size=min(2, min(self.Xii.shape[0], 32)), epochs=2, verbose=0)
         self.model.set_weights(self.bp.get_weights())
         mean_mse = history.history["loss"]
         if self.verbose:
@@ -135,7 +135,7 @@ def do_optimization(Xj, yj, Xi, yi, lambda_r, gamma, weight_hinge, learning_rate
             ReduceLROnPlateau(monitor=quantity_to_monitor, factor=0.2, patience=3, cooldown=1, min_lr=0.0000001,
                               mode='min'),
             LR_scheduler_factory(lr, interval=interval, factor=factor)],
-                                batch_size=batch_size, nb_epoch=max_epochs, verbose=verbose)
+                                batch_size=batch_size, epochs=max_epochs, verbose=verbose)
         print "Time taken", time.time() - start_time
         all_history = history.history
         return all_history, svm_model.get_weights()
@@ -149,7 +149,7 @@ def do_optimization(Xj, yj, Xi, yi, lambda_r, gamma, weight_hinge, learning_rate
                                            ReduceLROnPlateau(monitor=quantity_to_monitor, factor=0.2, patience=3,
                                                              cooldown=1, min_lr=0.0000001, mode="min"),
                                            LR_scheduler_factory(lr, interval=interval, factor=factor)],
-                                batch_size=batch_size, nb_epoch=max_epochs, verbose=verbose)
+                                batch_size=batch_size, epochs=max_epochs, verbose=verbose)
         print "Time taken", time.time() - start_time
         all_history = history.history
         return all_history, svm_model.get_weights()
