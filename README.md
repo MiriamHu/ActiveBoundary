@@ -50,6 +50,21 @@ For more (hyper)parameters please refer to `options.py`.
 
 The first time train.py is run for a certain dataset, the required data (and model if gpu is enabled) is downloaded automatically.
 
+### Embedding
+Any type of encoding-decoding network can be plugged into our system. See `generative_model.py` how to create your own class.
+
+Our system currently uses the "Adversarially Learned Inference" model (Dumoulin et al., 2016). See https://ishmaelbelghazi.github.io/ALI/ for more information and the code.
+
+--------------------------------------
+
+### Datasets
+We provide most encoded and non-encoded datasets from our paper:
+- MNIST 0 vs. 8
+- SVHN 0 vs. 8
+- ShoeBag
+
+To download a dataset either run `train.py --dataset [mnist08, svhn08, shoebag]` or run your own python script with the last lines of code in `options.py`.
+
 --------------------------------------
 
 Please do not hesitate to contact me (huijsermiriam@gmail.com) if you have any questions.  
